@@ -1,0 +1,49 @@
+<div class="form-block">
+    <%= form_with model: @ticket, url: ticket_path do |f| %>
+    <div class="flex">
+        <div class="form-group margin-right-50px">
+            <%= f.label :bank_name, "銀行名" %><br />
+            <%= f.text_field :bank_name, placeholder: '銀行名', class: "form-control", id: 'bank-name', list: "bank-list" %>
+            <datalist id="bank-list">
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :branch_name, "支店名" %><br />
+            <%= f.text_field :branch_name, placeholder: '支店名', class: "form-control ", id: 'branch-name', list: "branch-list" %>
+            <datalist id="branch-list">
+            </datalist>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :deposit_type, "預金種別" %><br />
+        <%= f.select :deposit_type, [['普通', '普通'], ['当座', '当座'], ['貯蓄', '貯蓄'], ['その他', 'その他']], { include_blank: '選択してください'}, {class: "btn btn-secondary dropdown-toggle", id: 'margin-bottom-2', required: true } %>
+    </div>
+
+    <div class="flex">
+        <div class="form-group margin-right-50px">
+            <%= f.label :account_number, "口座番号" %><br />
+            <%= f.text_field :account_number, placeholder: '口座番号', class: "form-control", id: "width-30" %>
+        </div>
+        <div class="form-group">
+            <%= f.label :account_name, "口座名義" %><br />
+            <%= f.text_field :account_name, placeholder: '口座名義', class: "form-control", id: "width-30" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :amount, "振込金額" %><br />
+        <%= f.text_field :amount, placeholder: '振込金額', class: "form-control width-44per", id: "width-30" %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :deadline, "支払い期日" %><br />
+        <%= f.date_field :deadline, placeholder: '口座名義', class: "form-control width-44per", id: "width-30" %>
+    </div>
+
+    <div class="actions">
+        <%= f.submit "登録する" , class: 'btn btn-info submit-button'%>
+    </div>
+    <% end %>
+</div>

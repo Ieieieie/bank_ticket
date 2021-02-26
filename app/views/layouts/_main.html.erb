@@ -1,0 +1,33 @@
+<div class="container">
+    <% unless @tickets.nil? %>
+        <div class="row margin-top-50">
+            <% @tickets.each do |ticket| %>
+                <%= link_to ticket , class: 'col-md-4 ticket-box' do%>
+                        <div class="recipient flex margin-4">
+                            <div class="recipient-text border-solid text-vertical margin-right-4 background-ffffcc">
+                                <p>お受取人</p>
+                            </div>
+                            <div class="recipient-info border-solid width-88 background-ffffcc">
+                                <p class="bank-name" style="display:inline"><%= ticket.bank_name %>銀行</p>
+                                <p class="branch-name" style="display:inline"> <%= ticket.branch_name %>支店</p>
+                                <p class="deposit-type"><%= ticket.deposit_type %>　<%= ticket.account_number %></p>
+                                <p class="account-name"><%= ticket.account_name %></p>
+                            </div>
+                        </div>
+                        <div class="client flex">
+                            <div class="client-text border-solid text-vertical margin-right-4 background-ffffcc">
+                                <p>ご依頼人</p>
+                            </div>
+                            <div class="client-info border-solid width-88 background-ffffcc">
+                                <p class="amount">振込金額：<%= ticket.amount %>円</p>
+                                <p class="tel">電話番号：00000000000</p>
+                            </div>
+                        </div>
+                        <div class="deadline-box border-solid text-align-center">
+                            <p class="deadline">支払い期日：<%= ticket.deadline.strftime("%Y年%-m月%-d日")%></p>
+                        </div>
+                <% end %>
+            <% end %>
+        </div>
+    <% end %>
+</div>

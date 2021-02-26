@@ -1,0 +1,160 @@
+// Place all the styles related to the ticket controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Kosugi Maru', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    transition: .3s;
+}
+a:hover{
+    color: black;
+    transform: scale(1.1);
+    z-index: 100;
+}
+a:visited{
+    border: none;
+}
+.ticket-box{
+    transition: .3s;
+    text-decoration:none !important;
+    color: black;
+    ticket-box:visited{
+        border:none;
+    }
+    
+    // margin: 10px;
+    border: solid;
+    border-width: thin;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    p{
+        margin: 0;
+    }
+    .deadline-box{
+        background-color: white;
+    }
+}
+
+.border-solid{
+    border: solid;
+    border-width: thin;
+    border-radius: 10px;
+}
+.width-18-per{
+    width: 18%;
+}
+.width-15-per{
+    width: 16%;
+}
+.flex{
+    display: flex;
+}
+
+.text-vertical{
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+}
+
+.margin-right-4{
+    margin-right: 4%;
+}
+
+.width-88{
+    width: 88%;
+}
+
+.background-ffffcc{
+    // background: #ffffec;
+    background-color: white;
+}
+
+.recipient{
+    margin-bottom: 10px;
+    .recipient-info{
+        padding: 10px;
+    }
+    
+    .recipient-text{
+        text-align: center;
+    }
+    
+}
+
+.client{
+    margin-bottom: 10px;
+    
+    .client-text{
+        text-align: center;
+    }
+    .client-info{
+        padding: 10px;
+    }
+    
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.margin-0-auto{
+    margin: 0 auto;
+}
+
+.margin-top-50{
+    margin-top: 50px;
+}
+
+.button-block{
+    width: 50%;
+    margin: 35px auto 0 auto;
+    flex-wrap: wrap;
+    text-align: center;
+        .transfer-btn{
+            width: 358px;
+            
+        }
+        .edit-btn{
+        }
+        .destroy-btn{
+        }
+}
+.form-block{
+    width: 26%;
+    margin: 50px auto 0 auto;
+    background: aliceblue;
+    padding: 30px;
+    .submit-button{
+        width: 100%;
+        margin-top: 25px;
+    }
+    .form-control{
+        background-color: #f9f9f9;;
+    }
+}
+.margin-right-50px{
+    margin-right: 50px;
+}
+.width-44per{
+    width: 44%;
+}
+
+.unpaid{
+    background: #b3dcff;
+    padding: 12px;
+}
+
+.show-ticket-block{
+    background: aliceblue;
+    padding: 25px 0 25px 0;
+    border: solid;
+    border-width: thin;
+}
