@@ -1,0 +1,38 @@
+body{
+    background: linear-gradient(257deg, #e4a972bf, #007bff94);
+}
+
+.login-form{
+    width: 25%;
+    margin: 14% auto;
+    border: solid;
+    border-width: thin;
+    border-radius: 9px;
+    background-color: white;
+    .user-login-text{
+        text-align: center;
+        background: #adb5bd8c;
+        padding: 11px 0;
+        border-bottom: solid;
+        border-width: thin;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .input-form{
+        width: 80%;
+        margin: 15px auto 0 auto;
+    }
+    .submit-box{
+        width: 80%;
+        margin: 27px auto 20px auto;
+    }
+    .remember-check-box{
+        padding-top: 7px;
+    }
+    .login-btn{
+        background: #329E91;
+        width: 127%;
+        margin-left: 10px;
+        font-size: 100%;
+    }
+}
