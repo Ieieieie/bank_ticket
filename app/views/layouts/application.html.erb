@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>BankTicket</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,8 +12,18 @@
   </head>
 
   <body>
+    <%= render 'layouts/header' %>
+     <% unless flash.empty? %>
+      <script type="text/javascript">
+        toastr.options = {
+          positionClass: "toast-top-right"
+        }
+        <% flash.each do |f| %>
+          <% type = f[0].to_s.gsub('alert','error').gsub('notice','success') %>
+          toastr['<%=type %>']('<%=f[1] %>');
+        <% end %>
+      </script>
+    <% end %>
     <%= yield %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
   </body>
 </html>

@@ -1,37 +1,34 @@
-<%= render 'layouts/header' %>
-<div class="container  margin-top-50">
-    <div class="show-ticket-block">
-        <div class="col-md-6 ticket-box margin-0-auto">
-            <div class="recipient flex margin-4">
-                <div class="recipient-text border-solid text-vertical margin-right-4 background-ffffcc">
-                    <p>お受取人</p>
-                </div>
-                <div class="recipient-info border-solid width-88 background-ffffcc">
-                    <p class="bank-name" style="display:inline"><%= @ticket.bank_name %>銀行</p>
-                    <p class="branch-name" style="display:inline"> <%= @ticket.branch_name %>支店</p>
-                    <p class="deposit-type"><%= @ticket.deposit_type %>　<%= @ticket.account_number %></p>
-                    <p class="account-name"><%= @ticket.account_name %></p>
-                </div>
+<div class="show-ticket-block">
+    <div class="col-md-6 ticket-box margin-0-auto">
+        <div class="recipient flex margin-4">
+            <div class="recipient-text border-solid text-vertical margin-right-4 background-ffffcc">
+                <p>お受取人</p>
             </div>
-            <div class="client flex">
-                <div class="client-text border-solid text-vertical margin-right-4 background-ffffcc">
-                    <p>ご依頼人</p>
-                </div>
-                <div class="client-info border-solid width-88 background-ffffcc">
-                    <p class="amount">振込金額：<%= @ticket.amount %>円</p>
-                    <p class="tel">電話番号：00000000000</p>
-                </div>
-            </div>
-            <div class="deadline-box border-solid text-align-center">
-                <p class="deadline">支払い期日：<%= @ticket.deadline.strftime("%Y年%-m月%-d日")%></p>
+            <div class="recipient-info border-solid width-88 background-ffffcc">
+                <p class="bank-name" style="display:inline"><%= @ticket.bank_name %>銀行</p>
+                <p class="branch-name" style="display:inline"> <%= @ticket.branch_name %>支店</p>
+                <p class="deposit-type"><%= @ticket.deposit_type %>　<%= @ticket.account_number %></p>
+                <p class="account-name"><%= @ticket.account_name %></p>
             </div>
         </div>
-        <div class="button-block flex">
-            <%= button_to '振込完了', "/transfer/#{@ticket.id}", method: :patch, class: 'btn btn-warning transfer-btn' %>
-            &nbsp;
-            <%= button_to '編集する', edit_ticket_path(@ticket), method: :get, class: 'btn btn-primary edit-btn' %>
-            &nbsp;
-            <%= button_to '削除する', ticket_path(@ticket), method: :delete, data: {confirm: '削除してもよろしいですか？'}, class: 'btn btn-danger destroy-btn' %>
+        <div class="client flex">
+            <div class="client-text border-solid text-vertical margin-right-4 background-ffffcc">
+                <p>ご依頼人</p>
+            </div>
+            <div class="client-info border-solid width-88 background-ffffcc">
+                <p class="amount">振込金額：<%= @ticket.amount %>円</p>
+                <p class="tel">電話番号：00000000000</p>
+            </div>
         </div>
+        <div class="deadline-box border-solid text-align-center">
+            <p class="deadline">支払い期日：<%= @ticket.deadline.strftime("%Y年%-m月%-d日")%></p>
+        </div>
+    </div>
+    <div class="button-block flex">
+        <%= button_to '振込完了', "/transfer/#{@ticket.id}", method: :patch, class: 'btn btn-warning transfer-btn' %>
+        &nbsp;
+        <%= button_to '編集する', edit_ticket_path(@ticket), method: :get, class: 'btn btn-primary edit-btn' %>
+        &nbsp;
+        <%= button_to '削除する', ticket_path(@ticket), method: :delete, data: {confirm: '削除してもよろしいですか？'}, class: 'btn btn-danger destroy-btn' %>
     </div>
 </div>
